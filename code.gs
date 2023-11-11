@@ -1,5 +1,5 @@
 const doGet = (e) => {
-  const LOGIN_REQUIRED = true;
+  const LOGIN_REQUIRED = false;
   let page = 'index';
 
   if (LOGIN_REQUIRED) {
