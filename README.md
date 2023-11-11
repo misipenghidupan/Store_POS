@@ -1,6 +1,6 @@
 # point-of-sale
 
-credit to user Martin-Ukhanov
+credit to user [Martin-Ukhanov](https://github.com/Martin-Ukhanov/point-of-sale)
 I make a copy of his sheet with script and changed acordingly to my need
 
 Point of sale web application that utilizes Google Apps Script to read/write user, customer, product, and invoice data to a Google Sheet.
