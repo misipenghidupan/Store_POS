@@ -3,9 +3,11 @@
 
   // Convert number to currency string
   const toDollars = (price) => {
-    const dollar = Intl.NumberFormat('en-US', {
+    const dollar = Intl.NumberFormat('id-ID', {
       style: 'currency',
-      currency: 'USD'
+      currency: 'IDR',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2
     });
 
     return dollar.format(price);
@@ -13,8 +15,8 @@
 
   // Get current date and time
   const getTimestamp = () => {
-    const timsestamp = new Date().toLocaleString('en-US', {
-      timeZone: 'America/New_York',
+    const timsestamp = new Date().toLocaleString('id-ID', {
+      timeZone: 'Asia/Jakarta',
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
@@ -380,7 +382,7 @@
 
   // Post invoice to worksheet
   const postInvoice = () => {
-    let canPost = false;
+    let canPost = true;
 
     if (!Order.isEmpty()) {
       if (Customer.isRequired()) {
@@ -389,7 +391,7 @@
         } else if (Salespeople.getSalesperson() === undefined) {
           UI.displayMessage('No salesperson selected.');
         } else {
-          UI.displayMessage('All customer fields must be filled out.');
+          UI.displayMessage('Customer field is empty. Invoice posted without customer information.');
         }
       } else if (Salespeople.getSalesperson() !== undefined) {
         canPost = true;
